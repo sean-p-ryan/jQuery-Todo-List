@@ -8,16 +8,25 @@
 	src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="assets/css/todos.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
-	
-	<div id="container">
-		<h1>TO-DO LIST</h1>
-		<input type="text" id="newToDo">
+	<h1 class="topPriority hide">Your top priority is<span class="topPriorityText"></span></h1>
+
+	<div class="selector">
+		<div class="display" id="todoButton"><h1>TODO LIST</h1></div>
+		<div class="display" id="completedButton"><h1 class="unselected">COMPLETED</h1></div>
+	</div>
+
+	<div class="container todoList">
+		<h1>TO-DO LIST <span id="plus"><i class="fa fa-plus"></i></span></h1>
+		<input type="text" placeholder="Add New Todo" id="newToDo">
+		<ul></ul>
+	</div>
+
+	<div class="container completed hide">
+		<h1>COMPLETED TODOS</h1>
 		<ul>
-			<li><span>X</span> Go to potions class</li>
-			<li><span>X</span> Buy new robe</li>
-			<li><span>X</span> Visit hagrid</li>
 		</ul>
 	</div>
 
