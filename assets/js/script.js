@@ -18,6 +18,7 @@ function createNewTodo() {
 	todoList.prepend(newLi);
 };
 
+
 //send data from input to new todo when return is pressed
 input.addEventListener("keypress", (e) => {
 	if (e.which === 13){	
@@ -45,13 +46,18 @@ todoButton.addEventListener("click", (e) => {
 //add completed todo to "completed" list when green check clicked
 todoList.addEventListener("click", (e) => {
 	if (e.target.classList.contains("check")){
-		var completedTodo = e.target.parentElement.textContent;
 		var newLi = document.createElement("li");
+		completedList.prepend(newLi);
+		var completedTodo = e.target.parentElement.textContent;
 		newLi.innerHTML = "<li>" + completedTodo + "</li>";
 		newLi.style.paddingLeft = "20px";
-		completedList.prepend(newLi);
-	}
+		var checkIcon = document.querySelector(".fa-check");
+		var targetLi = checkIcon.closest("li");
+		checkIcon.parentNode.parentNode.parentNode.removeChild(targetLi);	 
+	} 
 });
+
+
 
 
 
